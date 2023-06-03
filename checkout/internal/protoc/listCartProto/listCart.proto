@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+option go_package = "route256/checkout/listCart";
+
+service ListCart{
+    rpc Create(Request) returns (Response);
+}
+
+message Request{
+    uint64 user = 1;
+
+}
+
+message Response{
+    repeated Items items = 1;
+    uint32 totalPrice = 2;
+}
+
+message Items{
+    uint32 sku = 1;
+    uint32 count = 2;
+    string name = 3;
+    uint32 price = 4;
+}

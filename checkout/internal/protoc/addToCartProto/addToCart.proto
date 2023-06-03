@@ -1,0 +1,15 @@
+syntax = "proto3";
+option go_package = "route256/checkout/addToCart";
+service AddToCart{
+    rpc Create(Request) returns (Response);
+}
+
+message Request{
+    uint64 user = 1;
+    uint32 sku = 2;
+    uint32 count = 3;
+
+}
+
+
+message Response{}

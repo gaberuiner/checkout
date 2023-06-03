@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+option go_package = "route256/checkout/purchase";
+
+service Purchase{
+    rpc Create(Request) returns (Response);
+}
+
+
+message Request{
+    uint64 user = 1;
+
+}
+
+message Response{
+    int64 orderID = 1;
+}
